@@ -1,0 +1,5 @@
+class AddGreenIdToStartups < ActiveRecord::Migration
+  def change
+    add_reference :startups, :green, index: true, foreign_key: true
+  end
+end

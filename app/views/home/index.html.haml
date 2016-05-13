@@ -1,0 +1,130 @@
+
+  
+:javascript
+  $(document)
+    .ready(function() {
+    $(function(){
+      $('.fixed.menu').hide();
+    });
+      // fix menu when passed
+      $('.masthead')
+        .visibility({
+          once: false,
+          onBottomPassed: function() {
+            $('.fixed.menu').transition('fade in');
+          },
+          onBottomPassedReverse: function() {
+            $('.fixed.menu').transition('fade out');
+          }
+        })
+      ;
+
+      // create sidebar and attach to menu open
+      $('.ui.sidebar')
+        .sidebar('attach events', '.toc.item')
+      ;
+
+    })
+  ;
+
+/ Following Menu
+.ui.small.inverted.top.fixed.hidden.menu
+  .ui.container
+    %a.item 
+      %img{:src => "assets/icon-green.png"}
+    = link_to "{ Greens Consultants }", profile_index_path ,:class => "item", :id => "top"
+    = link_to "{ Greens Startups }", startups_path ,:class => "item" , :id => "top"
+    = link_to "{ Support }", static_support_community_path ,:class => "item" , :id => "top"
+    = link_to "{ Challenges }", challenges_path ,:class => "item", :id => "top"
+    .right.menu
+      .item
+        -if green_signed_in?
+          =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui button"
+        -elsif admin_signed_in?
+          =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui button"
+        -elsif !signed_in?
+          =link_to "{ login }", new_green_session_path ,:class => "ui button"
+        
+
+/ Sidebar Menu
+.ui.vertical.inverted.sidebar.menu
+  %a.item{:href => root_path}
+    %img{:src => "assets/icon-green.png"}
+  
+  = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
+  = link_to "{ Greens Startups }", startups_path ,:class => "item" 
+  = link_to "{ Support }", static_support_community_path ,:class => "item"
+  = link_to "{ Challenges }", challenges_path ,:class => "item"
+  -if green_signed_in?
+    =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui item"
+  -elsif admin_signed_in?
+    =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui item"
+  -elsif !signed_in?
+    =link_to "{ login }", new_green_session_path ,:class => "ui item"
+/ Page Contents
+.pusher
+  .ui.inverted.vertical.masthead.center.aligned.segment{:style => "background:url(assets/back.png) fixed;"}
+    .ui.container
+      .ui.small.secondary.inverted.pointing.menu
+        %a.toc.item
+          %i.sidebar.icon
+        %a.active.item#top{:href => root_path}
+          %img{:src => "assets/icon-green.png"}
+        = link_to "{ Greens Consultants }", profile_index_path ,:class => "item" , :id => "top"
+        = link_to "{ Greens Startups }", startups_path ,:class => "item" , :id => "top"
+        = link_to "{ Support }", static_support_community_path ,:class => "item", :id => "top"
+        = link_to "{ Challenges }", challenges_path ,:class => "item", :id => "top"
+        .right.item
+          -if green_signed_in?
+            =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui inverted button"
+          -elsif admin_signed_in?
+            =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui inverted button"
+          -elsif !signed_in?
+            =link_to "{ login }", new_green_session_path ,:class => "ui inverted button"
+    .ui.text.container
+      %h1.ui.inverted.header
+        = image_tag("/assets/icon-green.png",:style => "height:50px; width:50px;")
+      %h2{:style => "color:#424242;"} /> Creative Software Developers
+      .ui.text.container
+        %h3{:style => "color:#424242;"} /> Creative Problem Solvers
+        .ui.text.container
+          %h4{:style => "color:#424242;"} /> Creative Junkies
+          .ui.text.container
+            %h5{:style => "color:#424242;"} /> Geeks
+  .ui.vertical.stripe.segment
+    .ui.middle.aligned.stackable.grid.container
+      .row
+        .eight.wide.column
+          %h3.ui.header#special { Who are the Greens }
+          %p This is a group that consists of social oriented entrepreneurs and startups, select elite developer teams and individuals, as well as leaders of Nairobi’s tech user groups.
+          %h3.ui.header#special { What is their role? }
+          %p Using these individuals iHub also seeks to spread a culture of creating social changethrough technology, innovation and entrepreneurship The iHub is one of a kind… we have spurred a revolution in the tech ecosystem across the African continent over the last five years, influencing technology development, growth of hubs, incubators, accelerators and tech spaces.
+        .six.wide.right.floated.column
+          %img.ui.large.bordered.rounded.image{:src => "assets/ihub.png" , :style => "border:none!;"}
+      .row
+        .center.aligned.column
+          %a.ui.huge.button Check Them Out
+  .ui.vertical.stripe.quote.segment
+  .ui.equal.width.stackable.internally.celled.grid
+    .center.aligned.row
+      .column
+        %h3 < Who are the Greens >
+        %p This is a group that consists of social oriented entrepreneurs and startups, select elite developer teams and individuals, as well as leaders of Nairobi’s tech user groups.
+      .column
+        %h3 "It has been an experience."
+        %p
+          %img.ui.avatar.image{:src => "assets/imac.jpg"}
+            %b Eric Caleb
+            Chief Fun Officer 
+  .ui.vertical.stripe.segment
+  %br
+  .ui.text.container{:style => "padding-bottom:5%;"}
+    %h3.ui.header#special /> Greens Startups
+    %p Startups at the iHub are involved in various social enterprises and problem solving for every sector – agriculture, health, education, finance. This way of life makes them your best partner to solve a challenge you have identified
+    %a.ui.large.button Read More
+    %h4.ui.horizontal.header.divider
+      %a{:href => "#"} Case Studies
+    %h3.ui.header#special /> From the community manager
+    %p “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEM THE BEST CONTEXT EXPERTS”
+    %a.ui.large.button I'm Still Quite Interested
+=render 'layouts/footer'
