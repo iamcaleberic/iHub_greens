@@ -23,6 +23,7 @@ gem 'capistrano-bundler'
 gem 'cancancan', '~> 1.10'
 gem 'rails_admin'
 gem "paperclip"
+gem 'rails_12factor'
 # gem 'paper_trail'
 group :development, :test do
   gem 'byebug'
@@ -31,6 +32,5 @@ end
 group :development do
   gem 'web-console', '~> 2.0'
   gem 'spring'
-  gem 'rails_12factor'
 end
 
