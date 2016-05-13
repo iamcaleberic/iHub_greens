@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  category: MyString
+  employees: 1
+  date_founded: 2016-05-12
+  location: MyString
+  founders: MyString
+  greens_id: 
+
+two:
+  name: MyString
+  category: MyString
+  employees: 1
+  date_founded: 2016-05-12
+  location: MyString
+  founders: MyString
+  greens_id: 

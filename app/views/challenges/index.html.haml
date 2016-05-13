@@ -1,0 +1,45 @@
+=render'layouts/header'
+.ui.segment
+  %h3.ui.header#special { Give us a challenge }
+  %span “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEMTHE   BEST CONTEXT EXPERTS”
+  %h3 /> WHY A CHALLENGE ? 
+  %ul
+
+    %li Startups have sector experience and therefore 
+    %li More hours spent on the challenge allows proper user research, ideation, design, prototyping, building and testing as opposed to two or three hackathon days
+
+  %h3 /> For the Startups 
+  %ul
+    %li Experience working with a large multinational or Corporate or Not for Profit in solving a problem
+    %li Funds allocated directly to the startup support them post challenge (Seed money)
+  %hr
+
+  %h3.ui.header#special { Current challenges }
+  .ui.link.cards
+    - @challenges.each do |challenge|
+
+      .ui.card
+        .image
+          %img{:src => "/assets/imac.jpg"}
+        .content
+          .header 
+            =challenge.title
+          .meta
+            %a 
+              =challenge.organization
+          .description
+            =challenge.description
+        .extra.content
+          %span.right.floated
+            = challenge.timeline
+          %span
+            %p
+              =challenge.reward 
+        .extra.content
+          %span
+            -if admin_signed_in?
+              = link_to 'Show', challenge
+              = link_to 'Edit', edit_challenge_path(challenge)
+              = link_to 'Destroy', challenge, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+

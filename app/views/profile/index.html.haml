@@ -1,0 +1,27 @@
+=render 'layouts/header'
+.ui.segment
+	%h3.ui.header#special { Consultants }
+	.ui.link.cards
+		- @green.each do |green|
+
+			.ui.card
+				.image
+					%img{:src => "/assets/icon-green.png" , :style => "width:auto;height:auto;"}
+				.content
+					.header 
+						= green.name
+					.meta
+						%a 
+						= green.email
+					.description
+						=green.skills
+				.extra.content
+					%span.right.floated
+						= green.contact
+					%span
+					%p
+						=green.startups.name
+
+				.extra.content
+				%span
+				
