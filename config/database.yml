@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: i
-  username: cal
+  database: ihubstartups
+  username: ihub
   password: 
