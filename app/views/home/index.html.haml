@@ -1,3 +1,5 @@
+
+  
 :javascript
   $(document)
     .ready(function() {
@@ -81,7 +83,7 @@
             =link_to "{ login }", new_green_session_path ,:class => "ui inverted button"
     .ui.text.container
       %h1.ui.inverted.header
-        = image_tag("/assets/icon-green.png"),:style => "height:50px; width:50px;"
+        = image_tag("/assets/icon-green.png",:style => "height:50px; width:50px;")
       %h2{:style => "color:#424242;"} /> Creative Software Developers
       .ui.text.container
         %h3{:style => "color:#424242;"} /> Creative Problem Solvers
@@ -111,7 +113,7 @@
       .column
         %h3 "It has been an experience."
         %p
-          = image_tag("/assets/imac.jpg"),:class => "img ui avatar image"
+          = image_tag("/assets/imac.jpg"),:class=> "img ui avatar image"
             %b Eric Caleb
             Chief Fun Officer 
   .ui.vertical.stripe.segment
