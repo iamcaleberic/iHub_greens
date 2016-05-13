@@ -7,8 +7,7 @@ class CreateStartups < ActiveRecord::Migration
       t.date :date_founded
       t.string :location
       t.string :founders
-      t.references :greens, index: true, foreign_key: true
-
+      
       t.timestamps null: false
     end
   end
