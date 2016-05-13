@@ -14,8 +14,9 @@ require "capistrano/deploy"
 #   https://github.com/capistrano/bundler
 #   https://github.com/capistrano/rails
 #   https://github.com/capistrano/passenger
-#
-# require 'capistrano/rvm'
+set :rvm_type, :sudo
+set :rvm_ruby, '2.3.0'
+require 'capistrano/rvm'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 require 'capistrano/bundler'
