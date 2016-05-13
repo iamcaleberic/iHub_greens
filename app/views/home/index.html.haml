@@ -83,7 +83,7 @@
             =link_to "{ login }", new_green_session_path ,:class => "ui inverted button"
     .ui.text.container
       %h1.ui.inverted.header
-        = image_tag("/assets/icon-green.png"),:style => "height:50px; width:50px;"
+        = image_tag("/assets/icon-green.png",:style => "height:50px; width:50px;")
       %h2{:style => "color:#424242;"} /> Creative Software Developers
       .ui.text.container
         %h3{:style => "color:#424242;"} /> Creative Problem Solvers
@@ -100,7 +100,7 @@
           %h3.ui.header#special { What is their role? }
           %p Using these individuals iHub also seeks to spread a culture of creating social changethrough technology, innovation and entrepreneurship The iHub is one of a kind… we have spurred a revolution in the tech ecosystem across the African continent over the last five years, influencing technology development, growth of hubs, incubators, accelerators and tech spaces.
         .six.wide.right.floated.column
-          = image_tag("/assets/ihub.png") ,:class =>"ui large bordered rounded image"
+          = image_tag("/assets/ihub.png" ,:class =>"ui large bordered rounded image")
       .row
         .center.aligned.column
           %a.ui.huge.button Check Them Out
@@ -113,9 +113,9 @@
       .column
         %h3 "It has been an experience."
         %p
-          = image_tag("/assets/imac.jpg"),:class => "ui avatar image"
-            %b Eric Caleb
-            Chief Fun Officer 
+          =image_tag("/assets/imac.jpg",:class => "ui avatar image")
+          %b Eric Caleb
+          Chief Fun Officer 
   .ui.vertical.stripe.segment
   %br
   .ui.text.container{:style => "padding-bottom:5%;"}
@@ -127,4 +127,4 @@
     %h3.ui.header#special /> From the community manager
     %p “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEM THE BEST CONTEXT EXPERTS”
     %a.ui.large.button I'm Still Quite Interested
-=render 'layouts/footer'
+= render 'layouts/footer'
