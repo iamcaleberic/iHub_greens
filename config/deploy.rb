@@ -1,10 +1,11 @@
 # config valid only for current version of Capistrano
 set :user , "root"
 set :application, 'ihubstartups'
-set :repo_url, 'git@github.com:iamcaleberic/iHub_greens.git'
+set :repo_url, 'git@github.com:iamcaleberic/ihubstartups.git'
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
+
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/home/root/ihubstartups'
