@@ -21,7 +21,7 @@ set :deploy_to, '/home/root/ihubstartups'
 
 # Default value for :pty is false
 # set :pty, true
-
+set :assets_roles, [:web, :app]
 # Default value for :linked_files is []
 set :linked_files, fetch(:linked_files, []).push('config/database.yml')
 
