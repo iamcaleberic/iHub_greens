@@ -1,7 +1,7 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
+.ui.inverted.vertical.masthead.center.aligned.segment{:style => "background:url(assets/back.png) fixed;"}
 @media only screen and (max-width: 767px) {
   .ui.menu > .ui.container {
     width: 100% !important;
