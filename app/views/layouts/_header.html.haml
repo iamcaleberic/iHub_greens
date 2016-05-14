@@ -27,7 +27,7 @@
 .ui.inverted.small.top.menu{:style => "width:auto;"}
   .ui.container
     %a.item{:href=> root_path}
-      = image_tag("/assets/icon-green.png")
+      = image_tag("icon-green.png")
     = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
     = link_to "{ Greens Startups }", startups_path ,:class => "item" 
     = link_to "{ Support }", static_support_community_path ,:class => "item"
@@ -42,7 +42,8 @@
           =link_to "{ login }", new_green_session_path ,:class => "ui inverted button"
 / Sidebar Menu
 .ui.vertical.inverted.sidebar.menu
+  = link_to "{ Greens Startups }", startups_path ,:class => "item"
   = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
-  = link_to "{ Greens Startups }", startups_path ,:class => "item" 
-  = link_to "{ Support }", static_support_community_path ,:class => "item"
   = link_to "{ Challenges }", challenges_path ,:class => "item"
+  = link_to "{ Support }", static_support_community_path ,:class => "item"
+  
