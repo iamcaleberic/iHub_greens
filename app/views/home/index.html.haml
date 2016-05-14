@@ -99,7 +99,7 @@
           = image_tag("ihub.png" ,:class =>"ui large bordered rounded image")
       .row
         .center.aligned.column
-          %a.ui.huge.button Check Them Out
+          =link_to "Check Them Out",profile_index_path, :class => "ui small button"
   .ui.vertical.stripe.quote.segment
   .ui.equal.width.stackable.internally.celled.grid
     .center.aligned.row
@@ -117,10 +117,10 @@
   .ui.text.container{:style => "padding-bottom:5%;"}
     %h3.ui.header#special /> Greens Startups
     %p Startups at the iHub are involved in various social enterprises and problem solving for every sector – agriculture, health, education, finance. This way of life makes them your best partner to solve a challenge you have identified
-    %a.ui.large.button Read More
+    = link_to "Read More" ,challenges_path, :class =>"ui small button"
     %h4.ui.horizontal.header.divider
       %a{:href => "#"} Case Studies
     %h3.ui.header#special /> From the community manager
     %p “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEM THE BEST CONTEXT EXPERTS”
-    %a.ui.large.button I'm Still Quite Interested
-= render 'layouts/footer'
+    = link_to "I'm Still Quite Interested",startups_path, :class => "ui small button"
+= render 'layouts/footer' 
