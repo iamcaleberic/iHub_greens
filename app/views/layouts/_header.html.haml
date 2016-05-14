@@ -28,10 +28,11 @@
   .ui.container
     %a.item{:href=> root_path}
       = image_tag("icon-green.png")
-    = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
     = link_to "{ Greens Startups }", startups_path ,:class => "item" 
-    = link_to "{ Support }", static_support_community_path ,:class => "item"
+    = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
     = link_to "{ Challenges }", challenges_path ,:class => "item"
+    = link_to "{ Support }", static_support_community_path ,:class => "item"
+    
     .right.menu
       .item
         -if green_signed_in?
