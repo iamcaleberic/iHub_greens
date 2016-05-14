@@ -1,17 +1,17 @@
 default: &default
-  adapter: mysql2
+  adapter: postgresql
   pool: 5
   timeout: 5000
-  username: root
+  username: cal
   password: 
 
 development:
   <<: *default
-  database: ihubstartups
+  database: i
 
 
 production:
   <<: *default
-  database: ihubstartups
+  database: i
 
 
