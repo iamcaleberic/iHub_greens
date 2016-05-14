@@ -1,5 +1,7 @@
 =render"layouts/header"
 .ui.form.segment
+  %p.notice= notice
+  %p.alert= alert
   %h2 Admin
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
