@@ -25,6 +25,7 @@ gem 'rails_admin'
 gem "paperclip"
 gem 'rails_12factor'
 # gem 'paper_trail'
+gem 'minitest', '~> 5.9'
 group :development, :test do
   gem 'byebug'
 end
