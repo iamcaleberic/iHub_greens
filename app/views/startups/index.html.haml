@@ -7,7 +7,10 @@
 
       .ui.card
         .image
-          %img{:src => "/assets/icon-green.png" , :style => "width:auto;height:auto;"}
+        -if startup.avatar.nil?
+          = image_tag('icon-green.png')
+        -else
+          = image_tag startup.avatar.url(:medium)
         .content
           .header 
             = startup.name
@@ -24,8 +27,9 @@
               = startup.category 
         .extra.content
           %span
+            = link_to 'Show', startup
             -if admin_signed_in?
-              = link_to 'Show', startup
+              
               = link_to 'Edit', edit_startup_path(startup)
               = link_to 'Destroy', startup, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

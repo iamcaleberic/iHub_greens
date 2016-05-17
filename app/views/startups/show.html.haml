@@ -1,8 +1,11 @@
 = render 'layouts/header'
 .ui.segment
-  .ui.fluid.card
+  .ui.centered.card
     .image
-      %img{:src => "/assets/imac.jpg"}
+    -if @startup.avatar.nil?
+      = image_tag("icon-green.png")
+    -else
+      = image_tag @startup.avatar.url(:medium)
     .content
       .header 
         = @startup.name
@@ -27,5 +30,5 @@
         -if admin_signed_in?
           = link_to 'Edit', edit_startup_path(@startup)
           \|
-          = link_to 'Back', startups_path
+        = link_to 'Back', startups_path
 

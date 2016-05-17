@@ -20,7 +20,9 @@
 
       .ui.card
         .image
-          %img{:src => "/assets/imac.jpg"}
+        -if challenge.avatar.nil?
+        -else
+          = image_tag challenge.avatar.url(:medium)
         .content
           .header 
             =challenge.title
@@ -37,6 +39,7 @@
               =challenge.reward 
         .extra.content
           %span
+            = link_to 'More', challenge
             -if admin_signed_in?
               = link_to 'Show', challenge
               = link_to 'Edit', edit_challenge_path(challenge)

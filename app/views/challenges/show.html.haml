@@ -1,9 +1,11 @@
 = render'layouts/header'
 .ui.segment
   %p#notice= notice
-  .ui.fluid.card
+  .ui.centered.card
     .image
-      %img{:src => "/assets/imac.jpg"}
+    -if @challenge.avatar.nil?
+    -else
+      = image_tag @challenge.avatar.url(:thumb)
     .content
       .header 
         =@challenge.title
@@ -23,5 +25,5 @@
         -if admin_signed_in?
           = link_to 'Edit', edit_challenge_path(@challenge)
           \|
-          = link_to 'Back', challenges_path
+        = link_to 'Back', challenges_path
 
