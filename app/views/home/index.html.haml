@@ -40,6 +40,7 @@
     .right.menu
       .item
         -if green_signed_in?
+          = link_to "{ Profile }" , edit_green_registration_path, :class => "ui item" , :id => "top"
           =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui button"
         -elsif admin_signed_in?
           =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui button"
@@ -56,6 +57,7 @@
   = link_to "{ Challenges }", challenges_path ,:class => "item"
   = link_to "{ Support }", static_support_community_path ,:class => "item"
   -if green_signed_in?
+    = link_to "{ Profile }" , edit_green_registration_path, :class => "ui item" , :id => "top"
     =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui item"
   -elsif admin_signed_in?
     =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui item"
@@ -77,6 +79,8 @@
         
         .right.item
           -if green_signed_in?
+            = link_to "{ Profile }" , edit_green_registration_path, :class => "ui item" , :id => "top"
+
             =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui inverted button"
           -elsif admin_signed_in?
             =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui inverted button"

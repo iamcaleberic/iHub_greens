@@ -6,7 +6,9 @@
 
 			.ui.card
 				.image
-					%img{:src => "/assets/icon-green.png" , :style => "width:auto;height:auto;"}
+				-if green.avatar.nil?
+				-else 
+					= image_tag green.avatar.url(:medium)
 				.content
 					.header 
 						= green.name

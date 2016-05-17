@@ -25,8 +25,14 @@ gem 'rails_admin'
 gem "paperclip"
 gem 'rails_12factor'
 # gem 'paper_trail'
+
 group :development, :test do
+  gem 'minitest', '~> 5.9'
   gem 'byebug'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard-minitest'
+
 end
 
 group :development do

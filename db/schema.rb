@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160513054847) do
+ActiveRecord::Schema.define(version: 20160517160114) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,8 +40,12 @@ ActiveRecord::Schema.define(version: 20160513054847) do
     t.string   "organization"
     t.date     "timeline"
     t.string   "reward"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   create_table "greens", force: :cascade do |t|
@@ -77,11 +81,15 @@ ActiveRecord::Schema.define(version: 20160513054847) do
     t.date     "date_founded"
     t.string   "location"
     t.string   "founders"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
     t.integer  "green_id"
     t.text     "description"
     t.string   "web"
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
   end
 
   add_index "startups", ["green_id"], name: "index_startups_on_green_id", using: :btree
