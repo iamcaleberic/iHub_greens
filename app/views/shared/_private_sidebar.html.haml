@@ -1,0 +1,21 @@
+.ui.visible.inverted.left.vertical.sidebar.menu
+  = link_to root_path, class: 'ui item' do
+    %i.home.icon
+    { Home }
+  = link_to startups_path, class: 'ui item' do
+    %i.block.layout.icon
+    { My StartUps }
+  %a.item
+    %i.smile.icon
+    { Messages }
+  %a.item
+    %i.calendar.icon
+    { History }
+
+  -if green_signed_in?
+    = link_to "{ Profile }" , edit_green_registration_path, :class => "ui item" , :id => "top"
+    = link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui item", :id => "top"
+  -elsif admin_signed_in?
+    =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui item", :id => "top"
+  -elsif !signed_in?
+    =link_to "{ login }", new_green_session_path ,:class => "ui item", :id => "top"
