@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160523074124) do
+ActiveRecord::Schema.define(version: 20160523101136) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -80,6 +80,16 @@ ActiveRecord::Schema.define(version: 20160523074124) do
 
   add_index "greens", ["email"], name: "index_greens_on_email", unique: true
   add_index "greens", ["reset_password_token"], name: "index_greens_on_reset_password_token", unique: true
+
+  create_table "messages", force: :cascade do |t|
+    t.text     "body"
+    t.boolean  "read"
+    t.integer  "green_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "messages", ["green_id"], name: "index_messages_on_green_id"
 
   create_table "startups", force: :cascade do |t|
     t.string   "name"

@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :messages
   get 'errors/not_found'
   get 'errors/unacceptable'
   get 'errors/internal_error'
