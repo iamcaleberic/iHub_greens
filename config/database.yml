@@ -5,6 +5,10 @@ default: &default
   username: cal
   password: 
 
+test:
+  <<: *default
+  database: i
+
 development:
   <<: *default
   database: i

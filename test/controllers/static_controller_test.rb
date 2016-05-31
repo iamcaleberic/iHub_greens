@@ -1,10 +1,8 @@
 require 'test_helper'
 
 class StaticControllerTest < ActionController::TestCase
-  test "should get terms" do
-    get :terms
-    assert_response :success
-  end
+  include Devise::TestHelpers
+ 
 
   test "should get privacy_terms" do
     get :privacy_terms

@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class ErrorsControllerTest < ActionController::TestCase
+  include Devise::TestHelpers
   test "should get not_found" do
     get :not_found
     assert_response :success

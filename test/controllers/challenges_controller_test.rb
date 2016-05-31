@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class ChallengesControllerTest < ActionController::TestCase
+  
+  include Devise::TestHelpers
   setup do
     @challenge = challenges(:one)
+    sign_in Green.first
+    sign_in Admin.first
   end
 
   test "should get index" do
