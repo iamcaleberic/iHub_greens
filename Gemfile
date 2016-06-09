@@ -25,6 +25,7 @@ gem 'cancancan', '~> 1.10'
 gem 'rails_admin'
 gem "paperclip"
 gem 'rails_12factor'
+gem 'figaro'
 # gem 'paper_trail'
 
 group :development, :test do
