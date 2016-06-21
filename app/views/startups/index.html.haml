@@ -1,6 +1,6 @@
 = render 'layouts/header'
 
-.ui.segment
+.ui.segment{:style =>"margin-top:80px;"}
   %h3.ui.header#special startups 
   .ui.link.cards
     - @startups.each do |startup|
@@ -10,26 +10,27 @@
         -if startup.avatar.nil?
           = image_tag('icon-green.png')
         -else
-          = image_tag startup.avatar.url(:small)
+          = image_tag startup.avatar.url(:thumb)
         .content
           .header 
             = startup.name
+          %span.right.floated
+            = startup.web
           .meta
             %a 
               = startup.location
           .description
-            =startup.description
+            = truncate(startup.description, length: 20)
         .extra.content
           %span.right.floated
-            = startup.date_founded
+            = startup.date_founded.readable_inspect()
           %span
             %p
               = startup.category 
         .extra.content
           %span
             = link_to 'Show', startup
-            -if admin_signed_in? || startup.green_id == current_green.id?
-            
+            -if admin_signed_in?           
               = link_to 'Edit', edit_startup_path(startup)
               = link_to 'Destroy', startup, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

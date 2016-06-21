@@ -34,7 +34,7 @@
             %a 
               =challenge.organization
           .description
-            =challenge.description
+            = truncate(challenge.description, length: 20)
         .extra.content
           %span.right.floated
             = challenge.timeline
