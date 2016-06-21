@@ -1,6 +1,6 @@
 =render 'layouts/header'
-.ui.segment
-	%h3.ui.header#special { Consultants }
+.ui.segment{:style =>"margin-top:80px;"}
+	%h3.ui.header#special Consultants 
 	.ui.link.cards
 		- @green.each do |green|
 
@@ -8,21 +8,16 @@
 				.image
 				-if green.avatar.nil?
 				-else 
-					= image_tag green.avatar.url(:medium)
+					= image_tag green.avatar.url(:thumb)
 				.content
 					.header 
 						= green.name
-					.meta
-						%a 
-						= green.email
+
 					.description
 						=green.skills
 				.extra.content
-					%span.right.floated
-						= green.contact
-					%span
-					%p
-						=green.startups.name
+					
+					= green.startups.name
 
 				.extra.content
 				%span

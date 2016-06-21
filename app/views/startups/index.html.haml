@@ -1,7 +1,7 @@
 = render 'layouts/header'
 
 .ui.segment
-  %h3.ui.header#special  { startups }
+  %h3.ui.header#special startups 
   .ui.link.cards
     - @startups.each do |startup|
 
@@ -10,7 +10,7 @@
         -if startup.avatar.nil?
           = image_tag('icon-green.png')
         -else
-          = image_tag startup.avatar.url(:medium)
+          = image_tag startup.avatar.url(:small)
         .content
           .header 
             = startup.name
@@ -28,8 +28,8 @@
         .extra.content
           %span
             = link_to 'Show', startup
-            -if admin_signed_in?
-              
+            -if admin_signed_in? || startup.green_id == current_green.id?
+            
               = link_to 'Edit', edit_startup_path(startup)
               = link_to 'Destroy', startup, :method => :delete, :data => { :confirm => 'Are you sure?' }
 

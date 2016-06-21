@@ -3,17 +3,17 @@
   .ui.container
     .ui.stackable.inverted.divided.equal.height.stackable.grid
       .three.wide.column
-        %h4.ui.inverted.header /> About 
+        %h4.ui.inverted.header About 
         .ui.inverted.link.list
-          = link_to "{ Contact Us }" ,'',:class=> "item"
-          = link_to "{ Privacy and Terms }" ,static_privacy_terms_path, :class => "item"
+          = link_to " Contact Us " ,'',:class=> "item"
+          = link_to " Privacy and Terms " ,static_privacy_terms_path, :class => "item"
           
       .three.wide.column
-        %h4.ui.inverted.header /> Services
+        %h4.ui.inverted.header Services
         .ui.inverted.link.list
-          =link_to "{ FAQ }" , static_faqs_path, :class => "item"
-          =link_to "{ How To Access }", static_how_to_access_path ,:class => "item"
+          =link_to " FAQ " , static_faqs_path, :class => "item"
+          =link_to " How To Access ", static_how_to_access_path ,:class => "item"
       .seven.wide.column
         %h3.ui.inverted.header 
           = image_tag("icon-green.png")
-        %p /> We are a community
+        %p We are a community

@@ -1,51 +1,15 @@
-:css
-  a.item{color:#00C853 !important;}
-:javascript
-  $(document)
-    .ready(function() {
-
-      // fix menu when passed
-      $('.masthead')
-        .visibility({
-          once: false,
-          onBottomPassed: function() {
-            $('.fixed.menu').transition('fade in');
-          },
-          onBottomPassedReverse: function() {
-            $('.fixed.menu').transition('fade out');
-          }
-        })
-      ;
-
-      // create sidebar and attach to menu open
-      $('.ui.sidebar')
-        .sidebar('attach events', '.toc.item')
-      ;
-
-    })
-  ;
-.ui.inverted.small.top.menu{:style => "width:auto;"}
+.ui.fixed.inverted.menu
   .ui.container
-    %a.item{:href=> root_path}
-      = image_tag("icon-green.png")
-    = link_to "{ Greens Startups }", startups_path ,:class => "item" 
-    = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
-    = link_to "{ Challenges }", challenges_path ,:class => "item"
-    = link_to "{ Support }", static_support_community_path ,:class => "item"
-    
-    .right.menu
-      .item
-        -if green_signed_in?
-          = link_to "{ Profile }" , edit_green_registration_path, :class => "ui item" , :id => "top"
-          =link_to "{ logout }", destroy_green_session_path , :method => :delete,:class => "ui inverted button"
-        -elsif admin_signed_in?
-          =link_to "{ logout }", destroy_admin_session_path , :method => :delete ,:class => "ui inverted button"
-        -elsif !signed_in?
-          =link_to "{ login }", new_green_session_path ,:class => "ui inverted button"
-/ Sidebar Menu
-.ui.vertical.inverted.sidebar.menu
-  = link_to "{ Greens Startups }", startups_path ,:class => "item"
-  = link_to "{ Greens Consultants }", profile_index_path ,:class => "item"
-  = link_to "{ Challenges }", challenges_path ,:class => "item"
-  = link_to "{ Support }", static_support_community_path ,:class => "item"
-  
+    %a.header.item{:href => root_path}
+      %img.logo{:src => asset_url("icon-green.png")}
+    = link_to " Startups", startups_path ,:class => "item"
+    = link_to " Consultants ", profile_index_path ,:class => "item"
+    %a.item{:href => "#"} Partners
+  .right.container
+    -if green_signed_in?
+      =link_to "logout ", destroy_green_session_path , :method => :delete,:class => "item"
+    -elsif admin_signed_in?
+      =link_to "logout ", destroy_admin_session_path , :method => :delete ,:class => "item"
+    -elsif !signed_in?
+      =link_to "Login", new_green_session_path ,:class => "item"
+

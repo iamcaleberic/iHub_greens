@@ -1,5 +1,5 @@
 =render 'layouts/header'
-.ui.form.segment
+.ui.form.segment{:style =>"margin-top:40px;"}
 	%h2 Forgot your password?
 	= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
 		= devise_error_messages!

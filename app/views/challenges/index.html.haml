@@ -1,24 +1,24 @@
 =render'layouts/header'
-.ui.segment
-  %h3.ui.header#special { Give us a challenge }
+.ui.segment{:style =>"margin-top:80px;"}
+  %h3.ui.header#special  Give us a challenge 
   %span “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEMTHE   BEST CONTEXT EXPERTS”
-  %h3 /> WHY A CHALLENGE ? 
+  %h3  WHY A CHALLENGE ? 
   %ul
 
     %li Startups have sector experience and therefore 
     %li More hours spent on the challenge allows proper user research, ideation, design, prototyping, building and testing as opposed to two or three hackathon days
 
-  %h3 /> For the Startups 
+  %h3 For the Startups 
   %ul
     %li Experience working with a large multinational or Corporate or Not for Profit in solving a problem
     %li Funds allocated directly to the startup support them post challenge (Seed money)
-  %h3 /> For You 
+  %h3  For You 
   %ul
     %li Ownership of solution created 
    
   %hr
 
-  %h3.ui.header#special { Current challenges }
+  %h3.ui.header#special  Current challenges 
   .ui.link.cards
     - @challenges.each do |challenge|
 
