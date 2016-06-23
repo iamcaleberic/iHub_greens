@@ -1,8 +1,8 @@
 =render"layouts/header"
-.ui.form.segment
+.ui.form.segment{:style =>"margin-top:40px;"}
   %p.notice= notice
   %p.alert= alert
-  %h2{:style =>"margin-top:40px;"} Admin
+  %h2 Admin
   = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
     .field
       = f.label :email

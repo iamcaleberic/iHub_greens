@@ -19,7 +19,7 @@ Rails.application.routes.draw do
   resources :startups
   get 'static/support_community'
   get 'static/privacy_terms'
-  get 'profile/index'
+  resources :consultants
   get 'static/how_to_access'
   get 'static/faqs'
   get "/404", :to => "errors#not_found"
