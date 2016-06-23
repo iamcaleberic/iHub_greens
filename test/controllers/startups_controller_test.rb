@@ -4,8 +4,8 @@ class StartupsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
   setup do
     @startup = startups(:one)
-    sign_in Green.first
-    sign_in Admin.first
+    sign_in greens(:one)
+    sign_in admins(:one)
   end
 
   test "should get index" do

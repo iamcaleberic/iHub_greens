@@ -30,7 +30,9 @@
             = truncate(startup.description, length: 20)
         .extra.content
           %span.right.floated
-            = startup.date_founded.readable_inspect()
+            -if startup.date_founded.nil?
+            -else
+              = startup.date_founded.readable_inspect()
           %span
             %p
               = startup.category 

@@ -1,0 +1,10 @@
+one: 
+    id: 1
+    name: string
+    category: string
+    employees: 2
+    date_founded: 12/23/23
+    location: string
+    founders: string
+    description: text
+    web: string

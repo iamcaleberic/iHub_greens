@@ -1,7 +1,8 @@
 require 'test_helper'
 
-class ConsutantsControllerTest < ActionController::TestCase
+class ConsultantsControllerTest < ActionController::TestCase
   include Devise::TestHelpers
+
   test "should get index" do
     get :index
     assert_response :success
