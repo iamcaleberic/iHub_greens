@@ -7,4 +7,7 @@ class ErrorsController < ApplicationController
 
   def internal_error
   end
+  
+  def illegal
+  end
 end

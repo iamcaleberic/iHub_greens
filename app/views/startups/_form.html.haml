@@ -1,40 +1,43 @@
-= form_for @startup do |f|
-  - if @startup.errors.any?
-    #error_explanation
-      %h2= "#{pluralize(@startup.errors.count, "error")} prohibited this startup from being saved:"
-      %ul
-        - @startup.errors.full_messages.each do |msg|
-          %li= msg
+.ui.basic.form.segment
+  %center
+    .column#form
+      = form_for @startup do |f|
+        - if @startup.errors.any?
+          #error_explanation
+            %h2= "#{pluralize(@startup.errors.count, "error")} prohibited this startup from being saved:"
+            %ul
+              - @startup.errors.full_messages.each do |msg|
+                %li= msg
 
-  .field
-    = f.label :logo
-    = f.file_field :avatar
-  .field
-    = f.label :name
-    = f.text_field :name
-  .field
-    = f.label :description
-    = f.text_area :description
-  .field
-    = f.label :category
-    = f.text_field :category
-  .field
-    = f.label :employees
-    = f.number_field :employees
-  .inline.field
-    = f.label :date_founded
-    = f.date_select :date_founded
-  .field
-    = f.label :location
-    = f.text_field :location
-  .field
-    = f.label :web
-    = f.text_field :web
-  .field
-    = f.label :founders
-    = f.text_field :founders
-  .field
+        .field
+          = f.label :logo
+          = f.file_field :avatar
+        .field
+          = f.label :name
+          = f.text_field :name
+        .field
+          = f.label :description
+          = f.text_area :description
+        .field
+          = f.label :category
+          = f.text_field :category
+        .field
+          = f.label :employees
+          = f.number_field :employees
+        .inline.field
+          = f.label :date_founded
+          = f.date_select :date_founded
+        .field
+          = f.label :location
+          = f.text_field :location
+        .field
+          = f.label :web
+          = f.text_field :web
+        .field
+          = f.label :founders
+          = f.text_field :founders
+        .field
 
-    = f.hidden_field :green_id
-  .actions
-    = f.submit 'Save' , :class => "ui green button"
+          = f.hidden_field :green_id
+        .actions
+          = f.submit 'Save' , :class => "ui green button"

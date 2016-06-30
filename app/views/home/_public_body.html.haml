@@ -9,7 +9,7 @@
         %h5 The Green membership is for 
         %h5 A startup founder who is working on a social or commercial enterprise
         %h5 A freelance consultant developer, designer and a business developer who wants to contribute to start up or teach in community user groups
-        %h5 A person or a goup who shares and spreads our culture to other hubs and spaces
+        %h5 A person or a group who shares and spreads our culture to other hubs and spaces
         = link_to "Startups", startups_path 
         and 
         =link_to "Consultants ", consultants_path
@@ -52,4 +52,7 @@
           %input{:placeholder => "Name"}
         .field
           %input{:type=> "text", :placeholder => "Leave a message"}
-        .ui.green.button Submit
+        %br
+          .ui.green.button 
+            = mail_to "ihugreens@gmail.com" do 
+              Submit

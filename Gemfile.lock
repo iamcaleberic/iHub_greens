@@ -300,7 +300,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
-  cancancan (~> 1.10)
+  cancancan
   capistrano
   capistrano-bundler
   capistrano-rails

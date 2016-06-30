@@ -1,5 +1,5 @@
 =render 'layouts/header'
-.ui.basic.segment{:style =>"margin-top:80px;"}
+.ui.basic.segment
 	%h3.ui.header#special Consultants 
 	%p iHub Green Consultants are elite developers, designers, business developers, Digital marketing consultants who use their skills to support startups and grow the tech community groups.
 	%ul
@@ -27,5 +27,6 @@
 					= green.startups.name
 
 				.extra.content
-				%span
+					%span
+						= green.web
 				

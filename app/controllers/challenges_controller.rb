@@ -1,8 +1,8 @@
 class ChallengesController < ApplicationController
   before_action :authenticate_green! , :except => [:show, :index]
-  before_action :authenticate_admin! , :except => [:show, :index]
+  # before_action :authenticate_admin! , :except => [:show, :index]
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
-
+  skip_authorize_resource :only => :index
   # GET /challenges
   # GET /challenges.json
   def index
@@ -16,17 +16,19 @@ class ChallengesController < ApplicationController
 
   # GET /challenges/new
   def new
+    authorize! :new , @challenge
     @challenge = Challenge.new
   end
 
   # GET /challenges/1/edit
   def edit
+    authorize! :edit , @challenge
   end
 
   # POST /challenges
   # POST /challenges.json
   def create
-
+    authorize! :edit, @challenge
     @challenge = Challenge.new(challenge_params)
 
     respond_to do |format|
@@ -43,6 +45,7 @@ class ChallengesController < ApplicationController
   # PATCH/PUT /challenges/1
   # PATCH/PUT /challenges/1.json
   def update
+    authorize! :update , @challenge
     respond_to do |format|
       if @challenge.update(challenge_params)
         format.html { redirect_to @challenge, notice: 'Challenge was successfully updated.' }
@@ -57,6 +60,7 @@ class ChallengesController < ApplicationController
   # DELETE /challenges/1
   # DELETE /challenges/1.json
   def destroy
+    authorize! :destroy , @startup
     @challenge.destroy
     respond_to do |format|
       format.html { redirect_to challenges_url, notice: 'Challenge was successfully destroyed.' }

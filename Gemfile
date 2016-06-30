@@ -21,7 +21,7 @@ gem 'capistrano'
 gem 'capistrano-rvm'
 gem 'capistrano-rails'
 gem 'capistrano-bundler'
-gem 'cancancan', '~> 1.10'
+gem 'cancancan'
 gem 'rails_admin'
 gem "paperclip"
 gem 'rails_12factor'

@@ -7,3 +7,4 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 	Admin.create(email:"calebme@mail.com", password: "userpass")
 	Green.create(email:"calebme@mail.com", password: "userpass")
+	Green.create(email:"ericcaleb1@gmail.com.com", password: "userpass")

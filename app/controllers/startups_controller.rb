@@ -1,9 +1,9 @@
 class StartupsController < ApplicationController
   
   before_action :authenticate_green!, :except => [:show, :index]
-  before_action :authenticate_admin!, :except => [:show, :index]
+  # before_action :authenticate_admin!, :except => [:show, :index]
   before_action :set_startup, only: [:show, :edit, :update, :destroy]
-
+  skip_authorize_resource :only => :index
   # GET /startups
   # GET /startups.json
   def index
@@ -17,16 +17,19 @@ class StartupsController < ApplicationController
 
   # GET /startups/new
   def new
+    authorize! :new , @startup
     @startup = Startup.new
   end
 
   # GET /startups/1/edit
   def edit
+    authorize! :edit , @startup
   end
 
   # POST /startups
   # POST /startups.json
   def create
+    authorize! :create , @startup
     @startup = Startup.new(startup_params)
     @startup.green_id =current_green.id
     respond_to do |format|
@@ -43,6 +46,7 @@ class StartupsController < ApplicationController
   # PATCH/PUT /startups/1
   # PATCH/PUT /startups/1.json
   def update
+    authorize! :update , @startup
     respond_to do |format|
       if @startup.update(startup_params)
         format.html { redirect_to @startup, notice: 'Startup was successfully updated.' }
@@ -57,6 +61,7 @@ class StartupsController < ApplicationController
   # DELETE /startups/1
   # DELETE /startups/1.json
   def destroy
+    authorize! :destroy, @startup 
     @startup.destroy
     respond_to do |format|
       format.html { redirect_to startups_url, notice: 'Startup was successfully destroyed.' }
