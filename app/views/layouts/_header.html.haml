@@ -7,10 +7,16 @@
     = link_to "Challenges" , challenges_path ,:class => "item"
   .right.container
     -if green_signed_in?
-      =link_to "logout ", destroy_green_session_path , :method => :delete,:class => "item"
+      =link_to  destroy_green_session_path , :method => :delete,:class => "item" do 
+        %i.sign.out.icon
+        Logout
     -elsif admin_signed_in?
-      =link_to "logout ", destroy_admin_session_path , :method => :delete ,:class => "item"
+      =link_to "Logout ", destroy_admin_session_path , :method => :delete ,:class => "item" do
+        %i.sign.out.icon
+        Logout
     -elsif !signed_in?
-      =link_to "Login", new_green_session_path ,:class => "item"
+      =link_to new_green_session_path ,:class => "item" do 
+        %i.user.icon
+        Login
 %br 
 %br

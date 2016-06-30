@@ -1,4 +1,11 @@
-=render 'layouts/header'
+:javascript
+	$('.ui.star.rating')
+	  .rating({
+	    initialRating: 3,
+	    maxRating: 5
+	  })
+	;
+= render 'layouts/header'
 .ui.basic.segment
 	%h3.ui.header#special Consultants 
 	%p iHub Green Consultants are elite developers, designers, business developers, Digital marketing consultants who use their skills to support startups and grow the tech community groups.
@@ -21,12 +28,14 @@
 						= green.name
 
 					.description
-						=green.skills
+						= green.skills
 				.extra.content
 					
 					= green.startups.name
 
 				.extra.content
 					%span
+						%a
 						= green.web
-				
+				.extra.content
+					.ui.star.rating{"data-rating" => "3"}
