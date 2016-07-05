@@ -18,7 +18,9 @@
     = link_to destroy_green_session_path , :method => :delete,:class => "ui item", :id => "top" do
       %i.sign.out.icon
       Logout
-  -elsif admin_signed_in?
-    =link_to "Logout ", destroy_admin_session_path , :method => :delete ,:class => "ui item", :id => "top"
-  -elsif !signed_in?
-    =link_to "Login ", new_green_session_path ,:class => "ui item", :id => "top"
+  - elsif admin_signed_in?
+    = link_to  destroy_admin_session_path , :method => :delete ,:class => "ui item", :id => "top" do
+      %i.sign.out.icon
+      Log out
+  - elsif !signed_in?
+    =link_to "Sign in ", new_green_session_path ,:class => "ui item", :id => "top"

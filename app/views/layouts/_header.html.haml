@@ -11,12 +11,12 @@
         %i.sign.out.icon
         Logout
     -elsif admin_signed_in?
-      =link_to "Logout ", destroy_admin_session_path , :method => :delete ,:class => "item" do
+      =link_to destroy_admin_session_path , :method => :delete ,:class => "item" do
         %i.sign.out.icon
         Logout
     -elsif !signed_in?
       =link_to new_green_session_path ,:class => "item" do 
         %i.user.icon
-        Login
+        Sign in
 %br 
 %br

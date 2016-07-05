@@ -13,7 +13,7 @@
  *= require_tree .
  *= require_self
  */
-
+body{font-family: 'Abel', sans-serif;}
 h1,h2,h3,h4,h5,a,span{font-family: 'Oswald', sans-serif !important; font-weight: 300 ; }
 h1{font-family: 'Oswald', sans-serif; font-weight: 400; }
 /**{font-family: 'Helvetica'}
@@ -23,6 +23,7 @@ h1{font-family: 'Oswald', sans-serif; font-weight: 400; }
     src: url('/assets/HelveticaBQ-UltraLight.otf') format('otf'),
    
 }
+
 
 */
 @import "semantic-ui";

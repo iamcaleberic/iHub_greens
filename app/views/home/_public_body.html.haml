@@ -1,26 +1,26 @@
 %section#img
   %center
-    %h3{:style => "color:#fff;font-size:30px;"} The only organized community of Creative Problem Solvers in the World
+    %h3{:style => "color:#fff;font-size:27px;"} The only organized community of Creative Problem Solvers in the World
 %section
   .ui.equal.width.stackable.internally.celled.grid#second
     .column
       %center
         %h3#special Greens
-        %h5 The Green membership is for 
-        %h5 A startup founder who is working on a social or commercial enterprise
-        %h5 A freelance consultant developer, designer and a business developer who wants to contribute to start up or teach in community user groups
-        %h5 A person or a group who shares and spreads our culture to other hubs and spaces
+        %p The Green membership is for 
+        %p A startup founder who is working on a social or commercial enterprise
+        %p A freelance consultant developer, designer and a business developer who wants to contribute to a start up or participate in community user groups
+        %p A person or a group who shares and spreads our culture to other hubs and spaces
         = link_to "Startups", startups_path 
         and 
         =link_to "Consultants ", consultants_path
-        %h5 To 
+        
 
     .column
       %center
         %h3#special About the iHub
 
-        %h5 The iHub is a community of creative problem solvers
-        %h5 who solve contextual problems using tech and entrepreneurship
+        %p The iHub is a community of creative problem solvers
+        %p who solve contextual problems using tech and entrepreneurship
         %br
         = image_tag("ihub.png", width: "150px" , height: "50px")
 .ui.horizontal.divider
@@ -39,11 +39,12 @@
   %br
   .ui.equal.width.stackable.internally.celled.grid#contact
     .column
-      %h5 Contact our team or simply leave a message
-      %h5 4th Floor Bishop Magua House Ngong Road
-      %h4 Email:
-      %i.mail.icon 
-        %h5 community@ihubstartups.org
+      %p Contact our team or simply leave a message
+      %p 4th Floor Bishop Magua House Ngong Road
+      %h5 Email:
+      = link_to '' do 
+        %i.mail.icon 
+        community@ihubstartups.org
     .column
       .ui.form
         .field
@@ -54,5 +55,5 @@
           %input{:type=> "text", :placeholder => "Leave a message"}
         %br
           .ui.green.button 
-            = mail_to "ihugreens@gmail.com" do 
+            = mail_to "ihugreens@gmail.com" , id: "cnt" do 
               Submit
