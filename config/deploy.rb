@@ -1,6 +1,5 @@
 # config valid only for current version of Capistrano
-set :user , "jp"
-set :port, 6666
+set :user , "root"
 set :application, 'ihubstartups'
 set :repo_url, 'git@github.com:iamcaleberic/ihubstartups.git'
 
@@ -9,7 +8,7 @@ set :repo_url, 'git@github.com:iamcaleberic/ihubstartups.git'
 
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/jp/ihubstartups'
+set :deploy_to, '/home/root/ihubstartups'
 
 # Default value for :scm is :git
 # set :scm, :git
