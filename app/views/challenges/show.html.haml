@@ -1,7 +1,7 @@
 = render'layouts/header'
-.ui.basicsegment
+.ui.basic.segment
   %p#notice= notice
-  .ui.centered.card
+  .ui.centered.card{:style => "width:70%"}
     .image
     -if @challenge.avatar.nil?
     -else

@@ -4,8 +4,9 @@
 		.ui.green.header 
 			%i.dashboard.icon
 			Dashboard
-		.ui.green.message Please Update your profile to showcase your skills 
-		.ui.icon.blue.message
+		-if current_green.name.nil?
+			.ui.green.message{:style => "width:40%;"} Please Update your profile to showcase your skills 
+		.ui.icon.blue.message{:style => "width:40%;"}
 			%i.notched.circle.loading.icon
 			Messaging will be active soon enough
 		
