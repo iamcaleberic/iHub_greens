@@ -5,12 +5,12 @@ default: &default
 
 development:
   <<: *default
-  database: i
+  database: ihub
 
 test:
   <<: *default
-  database: i
+  database: ihub
 
 production:
   <<: *default
-  database: i
+  database: ihub

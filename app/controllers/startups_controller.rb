@@ -1,7 +1,6 @@
 class StartupsController < ApplicationController
-  
-  before_action :authenticate_green!, :except => [:show, :index]
-  # before_action :authenticate_admin!, :except => [:show, :index]
+  # before_action :authenticate_green!, :except => [:show, :index]
+  before_action :authenticate_admin!, :except => [:show, :index]
   before_action :set_startup, only: [:show, :edit, :update, :destroy]
   skip_authorize_resource :only => :index
   # GET /startups
@@ -72,11 +71,11 @@ class StartupsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_startup
-      @startup = Startup.find(params[:id])
+      @startup = Startup.find.(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def startup_params
-      params.require(:startup).permit(:avatar,:name,:web, :category, :description,:employees, :date_founded, :location, :founders, :green_id)
+      params.require(:startup).permit(:avatar,:name,:web, :category, :description,:employees, :date_founded, :location, :founders, :green_id,:slug)
     end
 end

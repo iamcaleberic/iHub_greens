@@ -26,7 +26,7 @@ gem 'rails_admin'
 gem "paperclip"
 gem 'rails_12factor'
 gem 'figaro'
-gem 'friendly_id', '~> 5.1.0'
+# gem 'friendly_id', '~> 5.1.0'
 # gem 'paper_trail'
 gem 'quiet_assets'
 group :development, :test do

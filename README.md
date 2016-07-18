@@ -1,7 +1,7 @@
 # iHub greens
 
 
-    Ruby 2.3.0
+    Ruby 2.3.1
 
     Rails 4.2.6
 
@@ -9,20 +9,19 @@
 
     Configuration
 
-    Database
+    ## Database
 
-    - Postgresql
     - MySql
 
     Database initialization
 
-    Test suite
+    ##Test suite
 
     - Minitest
 
     Services (job queues, cache servers, search engines, etc.)
 
-    Deployment
+    ##Deployment
 
     - Capistrano
     - Passenger

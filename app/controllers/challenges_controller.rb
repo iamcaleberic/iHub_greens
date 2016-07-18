@@ -1,5 +1,5 @@
 class ChallengesController < ApplicationController
-  before_action :authenticate_green! , :except => [:show, :index]
+  # before_action :authenticate_green! , :except => [:show, :index]
   # before_action :authenticate_admin! , :except => [:show, :index]
   before_action :set_challenge, only: [:show, :edit, :update, :destroy]
   skip_authorize_resource :only => :index
@@ -71,7 +71,7 @@ class ChallengesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_challenge
-      @challenge = Challenge.friendly.find(params[:id])
+      @challenge = Challenge.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

@@ -28,7 +28,7 @@
             .circular.medium.ui.image
               -if challenge.avatar.nil?
               -else
-                = image_tag challenge.avatar.url(:medium)
+                = image_tag challenge.avatar.url(:thumb)
         .content
           .header 
             %center
