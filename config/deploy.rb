@@ -1,5 +1,5 @@
 # config valid only for current version of Capistrano
-set :user , "root"
+set :user , "jp"
 set :application, 'ihubstartups'
 set :repo_url, 'git@github.com:iamcaleberic/ihubstartups.git'
 
@@ -8,7 +8,7 @@ set :repo_url, 'git@github.com:iamcaleberic/ihubstartups.git'
 
 
 # Default deploy_to directory is /var/www/my_app_name
-set :deploy_to, '/home/root/ihubstartups'
+set :deploy_to, '/home/jp/ihubstartups'
 
 # Default value for :scm is :git
 # set :scm, :git
@@ -32,9 +32,10 @@ set :linked_dirs, fetch(:linked_dirs, []).push('bin', 'log', 'tmp/pids', 'tmp/ca
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }
 
 # Default value for keep_releases is 5
-# set :keep_releases, 5
+set :keep_releases, 5
 
 namespace :deploy do
+
 
   after :restart, :clear_cache do
     on roles(:web), in: :groups, limit: 3, wait: 10 do
@@ -42,6 +43,13 @@ namespace :deploy do
       # within release_path do
       #   execute :rake, 'cache:clear'
       # end
+    end
+
+  	on roles(:db), in: :groups, limit: 3, wait: 10 do
+      # Here we can do anything such as:
+      within release_path do
+        execute :rake, 'db:seed'
+      end
     end
   end
 

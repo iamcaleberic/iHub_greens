@@ -1,5 +1,5 @@
 class StartupsController < ApplicationController
-  # before_action :authenticate_green!, :except => [:show, :index]
+  before_action :authenticate_green!, :except => [:show, :index]
   before_action :authenticate_admin!, :except => [:show, :index]
   before_action :set_startup, only: [:show, :edit, :update, :destroy]
   skip_authorize_resource :only => :index
