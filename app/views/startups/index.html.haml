@@ -8,16 +8,17 @@
     %li  To make things simpler
     %li  To solve peoples problems and 
     %li  Create wellbeing for humanity
-  %hr
+  .ui.divider
   .ui.link.cards
     - @startups.each do |startup|
 
-      .ui.card
-        .image
-        -if startup.avatar.nil?
-          = image_tag('icon-green.png')
-        -else
-          = image_tag startup.avatar.url(:thumb)
+      .ui.red.card
+        .content
+          .ui.avatar.image
+            -if startup.avatar.nil?
+              = image_tag('icon-green.png')
+            -else
+              = image_tag startup.avatar.url(:thumb)
         .content
           .header 
             = startup.name

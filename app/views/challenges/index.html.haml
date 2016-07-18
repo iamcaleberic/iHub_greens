@@ -1,7 +1,7 @@
 = render'layouts/header'
 .ui.basic.segment
   %h3.ui.header#special  Give us a challenge 
-  %span “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEM THE   BEST CONTEXT EXPERTS”
+  %small “THE STARTUPS ARE CONTINUOUSLY INVOLVED IN PROBLEM SOLVING AND IMPROVING LIVES - MAKING THEM THE   BEST CONTEXT EXPERTS”
   %h3  WHY A CHALLENGE ? 
   %ul{:Style =>"list-style:none;"}
 
@@ -16,17 +16,18 @@
   %ul{:Style =>"list-style:none;"}
     %li Ownership of solution created 
    
-  %hr
+  .ui.divider
 
   %h3.ui.header#special  Current challenges 
   .ui.link.cards
     - @challenges.each do |challenge|
 
-      .ui.card
-        .image
-        -if challenge.avatar.nil?
-        -else
-          = image_tag challenge.avatar.url(:medium)
+      .ui.blue.card
+        .content
+          .ui.avatar.image
+            -if challenge.avatar.nil?
+            -else
+              = image_tag challenge.avatar.url(:medium)
         .content
           .header 
             =challenge.title

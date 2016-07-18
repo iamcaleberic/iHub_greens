@@ -25,7 +25,7 @@
         = image_tag("ihub.png", width: "150px" , height: "50px")
 .ui.horizontal.divider
 
-%section
+.ui.basic.segment
   %center
     %h3#special Visit us
   %br
@@ -37,23 +37,12 @@
   %center
     %h3#special Reach us
   %br
-  .ui.equal.width.stackable.internally.celled.grid#contact
-    .column
+  .ui.basic.segment#contact
+    %center
       %p Contact our team or simply leave a message
       %p 4th Floor Bishop Magua House Ngong Road
       %h5 Email:
       = link_to '' do 
         %i.mail.icon 
         community@ihubstartups.org
-    .column
-      .ui.form
-        .field
-          %input{:placeholder => "Email"}
-        .field
-          %input{:placeholder => "Name"}
-        .field
-          %input{:type=> "text", :placeholder => "Leave a message"}
         %br
-          .ui.green.button 
-            = mail_to "ihugreens@gmail.com" , id: "cnt" do 
-              Submit
