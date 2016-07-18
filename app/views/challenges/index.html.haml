@@ -31,9 +31,9 @@
         .content
           .header 
             =challenge.title
-          .meta
-            %a 
-              =challenge.organization
+          .right.floated.meta
+            %i.marker.icon
+            = challenge.organization
           .description
             = truncate(challenge.description, length: 20)
         .extra.content

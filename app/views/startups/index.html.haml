@@ -19,14 +19,15 @@
               = image_tag('icon-green.png')
             -else
               = image_tag startup.avatar.url(:thumb)
+           
+          .right.floated.meta
+            %i.marker.icon
+            = startup.location
         .content
           .header 
             = startup.name
           %span.right.floated
             = startup.web
-          .meta
-            %a 
-              = startup.location
           .description
             = truncate(startup.description, length: 20)
         .extra.content

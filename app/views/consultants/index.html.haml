@@ -18,8 +18,9 @@
 						.circular.medium.ui.image
 							= image_tag green.avatar.url(:thumb)
 				.content
-					.header 
-						= green.name
+					.header
+						%center 
+							= green.name
 
 					.description
 						= green.skills
@@ -28,5 +29,5 @@
 					= green.startups.name
 
 				.extra.content
-					%a{:target => '_blank'}
+					.right.floated.meta
 						= green.web
