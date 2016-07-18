@@ -2,21 +2,26 @@
 .ui.basic.segment
   %p#notice= notice
   .ui.centered.card{:style => "width:70%"}
-    .image
-    -if @challenge.avatar.nil?
-    -else
-      = image_tag @challenge.avatar.url(:thumb)
     .content
+      %center
+        .circular.ui.image
+          -if @challenge.avatar.nil?
+          -else
+            = image_tag @challenge.avatar.url(:medium)
+    .inverted.green.content
       .header 
-        =@challenge.title
-      .meta
-        %a 
-          =@challenge.organization
+        %center
+          = @challenge.title
+      .right.floated.meta 
+        %i.suitcase.icon
+        = @challenge.organization
       .description
         =@challenge.description
     .extra.content
       %span.right.floated
-        = @challenge.timeline
+        -if @challenge.timeline.nil?
+        -else
+          = @challenge.timeline.readable_inspect()
       %span
         %p
           =@challenge.reward 

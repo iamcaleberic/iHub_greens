@@ -24,21 +24,24 @@
 
       .ui.blue.card
         .content
-          .circular.medium.ui.image
-            -if challenge.avatar.nil?
-            -else
-              = image_tag challenge.avatar.url(:medium)
+          %center
+            .circular.medium.ui.image
+              -if challenge.avatar.nil?
+              -else
+                = image_tag challenge.avatar.url(:medium)
         .content
           .header 
-            =challenge.title
+            %center
+              =challenge.title
           .right.floated.meta
-            %i.marker.icon
             = challenge.organization
           .description
             = truncate(challenge.description, length: 20)
         .extra.content
           %span.right.floated
-            = challenge.timeline
+            -if challenge.timeline.nil?
+            -else
+              = challenge.timeline.readable_inspect()
           %span
             %p
               =challenge.reward 

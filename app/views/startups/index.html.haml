@@ -2,7 +2,7 @@
 
 .ui.basic.segment
   %h3.ui.header#special Startups 
-  %p The iHub Green startups use innovative business models and technology 
+  %p The iHub Green startups use innovative business models and technology: 
   %ul{:Style =>"list-style:none;"}
     %li To improve processes or eliminate inneficiency, 
     %li  To make things simpler
@@ -14,18 +14,20 @@
 
       .ui.red.card
         .content
-          .circular.medium.ui.image
-            -if startup.avatar.nil?
-              = image_tag('icon-green.png')
-            -else
-              = image_tag startup.avatar.url(:thumb)
-           
+          %center
+            .circular.medium.ui.image
+              -if startup.avatar.nil?
+                = image_tag('icon-green.png')
+              -else
+                = image_tag startup.avatar.url(:thumb)
+             
           .right.floated.meta
             %i.marker.icon
             = startup.location
         .content
           .header 
-            = startup.name
+            %center
+              = startup.name
           %span.right.floated
             = startup.web
           .description

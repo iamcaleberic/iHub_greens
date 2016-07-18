@@ -1,17 +1,19 @@
 = render 'layouts/header'
 .ui.basic.segment
   .ui.centered.card{:style => "width:70%"}
-    .image
-    -if @startup.avatar.nil?
-      = image_tag("icon-green.png")
-    -else
-      = image_tag @startup.avatar.url(:medium)
+    .content
+      %center
+        .circular.ui.image
+          -if @startup.avatar.nil?
+            = image_tag("icon-green.png")
+          -else
+            = image_tag @startup.avatar.url(:medium)
     .content
       .header 
-        = @startup.name
-      .meta
-        %a 
-          = @startup.web
+        %center
+          = @startup.name
+      .right.floated.meta
+        = @startup.web
       .description
         =@startup.description
     .extra.content
@@ -24,7 +26,6 @@
           = @startup.category
     .extra.content
       %span 
-        
         = @startup.founders
 
     .extra.content
